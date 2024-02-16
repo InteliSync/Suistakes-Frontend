@@ -1,5 +1,5 @@
 
-import * as React from 'react';
+import React, { useState } from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
@@ -23,24 +23,16 @@ import LiveBets from './LiveBets';
 import Banner from './Banner';
 import Cards from './Cards';
 import image1 from '../../assets/images/dashboard/suiStakeLogo.png';
-import image2 from '../../assets/images/dashboard/PokerChip.png';
+import LeftIcon from '../../assets/images/dashboard/LeftIcon.png';
 import Button from '../../components/Button';
 import { CPrimary, CSecondary, backgroundColor } from '../../assets/theme/colors'
+import Games from '../games/Games';
+import LiveGames from '../liveGames/LiveGames';
+import Faq from '../faq/faq';
+import Contact from '../contact/Contact';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -88,39 +80,34 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-// TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 export default function Dashboard() {
+
+  const [selectedItem, setSelectedItem] = useState('home');
+
+  const handleItemClick = (item) => {
+    setSelectedItem(item);
+  };
 
   const containerStyle = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    // position: 'relative',
-
   };
 
   const lineStyle = {
     height: '2px',
-    width: '41%', // Adjust the width of the lines as needed
-    backgroundColor: CSecondary,
+    width: '42%',
+    backgroundColor: "gray",
   };
 
   const textStyle = {
-    margin: '0 10px', // Adjust the margin as needed
-    fontSize: '18px', // Adjust the font size as needed
-    //fontWeight: 'bold',
+    margin: '0 10px', 
+    fontSize: '18px', 
     color: CSecondary,
 
   };
-
-
-  const CustomScrollbar = styled('div')({
-    overflow: 'auto',
-    flexGrow: 1,
-    height: '100vh',
-  });
 
 
   const [open, setOpen] = React.useState(true);
@@ -136,31 +123,20 @@ export default function Dashboard() {
           display: 'flex',
           pr: '24px',
         }}>
-
           <CssBaseline />
-          <AppBar position="absolute" open={open}>
+
+          <AppBar position="absolute" open={open} style={{ backgroundColor: CPrimary }}>
 
             <Toolbar
-              sx={{
-                //  pr: '24px', // keep right padding when drawer closed
-                backgroundColor: CPrimary
-              }}
+
+              style={{ backgroundColor: CPrimary }}
             >
-              <IconButton
-                edge="start"
-                color="inherit"
-                aria-label="open drawer"
-                onClick={toggleDrawer}
-                sx={{
-                  marginRight: '36px',
-                  ...(open && { display: 'none' }),
-                }}
-              >
-                <img src={image2} alt="logo"
-                  style={{ marginRight: "5%", }}
+            
+              <IconButton onClick={toggleDrawer}>
+                <img src={LeftIcon} alt="logo"
+                  style={{ marginLeft: -15 }}
                 />
               </IconButton>
-
 
               <Typography
                 component="h1"
@@ -169,8 +145,9 @@ export default function Dashboard() {
                 noWrap
                 sx={{ flexGrow: 1 }}
               >
-                Welcome
+
               </Typography>
+
               <IconButton color="inherit">
 
                 <Button />
@@ -178,8 +155,10 @@ export default function Dashboard() {
               </IconButton>
             </Toolbar>
           </AppBar>
-          <Drawer variant="permanent" open={open} style={{ backgroundColor: CPrimary ,
-                borderBottom: `2px solid ${CPrimary}`}}>
+          <Drawer variant="permanent" open={open} style={{
+            backgroundColor: CPrimary,
+            borderBottom: `2px solid ${CPrimary}`,
+          }}>
             <Toolbar
               sx={{
                 display: 'flex',
@@ -194,74 +173,70 @@ export default function Dashboard() {
               <img src={image1} alt="logo"
                 style={{ marginRight: "5%", }}
               />
-              <IconButton onClick={toggleDrawer}>
-
-                <ChevronLeftIcon style={{ color: "gray" }} />
-              </IconButton>
+            
             </Toolbar>
-            <Divider />
             <List component="nav" style={{ backgroundColor: CPrimary, flex: 1 }}>
-              {mainListItems}
+              {mainListItems(handleItemClick, selectedItem)}
 
             </List>
           </Drawer>
           <Box
             component="main"
             sx={{
-              // backgroundColor: (theme) =>
-              //   theme.palette.mode === 'light'
-              //     ? theme.palette.grey[100]
-              //     : theme.palette.grey[900],
+
               flexGrow: 1,
               height: '100vh',
-              overflow: 'scroll',
-              '&::-webkit-scrollbar': {
-                width: '0.5em',  // Adjust the width as needed
-              },
-              '&::-webkit-scrollbar-thumb': {
-                backgroundColor: backgroundColor,  // Adjust the color as needed
-              },
+
+              overflowY: 'scroll', scrollbarWidth: 'none', msOverflowStyle: 'none',
             }}
           >
             <Toolbar />
-            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-              <Grid container spacing={3}>
-                <Grid item xs={12} style={{ marginTop: "-3%" }}>
-                  <Banner />
-                </Grid>
-                <Grid item xs={12} style={{ marginTop: "-5%" }}>
-                  <div style={containerStyle}>
-                    <div style={lineStyle}></div>
-                    <span style={textStyle}>Featured Games</span>
-                    <div style={lineStyle}></div>
-                  </div>
-                </Grid>
-                <Grid item xs={12}>
-                  <Cards />
-                </Grid>
-                <Grid item xs={12} style={{marginTop:"2%",marginBottom:"2%"}}>
-                  <div style={containerStyle}>
-                    <div style={{
-                      height: '2px',
-                      width: '44%',
-                      backgroundColor: CSecondary
-                    }}></div>
-                    <span style={textStyle}>  Live Bets   </span>
-                    <div style={{
-                      height: '2px',
-                      width: '44%',
-                      backgroundColor: CSecondary
-                    }}></div>
-                  </div>
-                </Grid>
-                <Grid item xs={12}>
-                  <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                    <LiveBets />
-                  </Paper>
-                </Grid>
-              </Grid>
+            {selectedItem === 'home' && (
+              <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+                <Grid container spacing={3}>
+                  <Grid item xs={12} style={{marginLeft:"2%"}}>
+                    <Banner />
+                  </Grid>
 
-            </Container>
+                  <Grid item xs={12} style={{marginTop:"-5%"}}>
+                    <Cards />
+                  </Grid>
+                  <Grid item xs={12} style={{ marginTop: "2%", marginBottom: "2%",marginLeft:"2%" }}>
+                    <div style={containerStyle}>
+                      <div style={lineStyle}></div>
+                      <span style={textStyle}>&nbsp;&nbsp;&nbsp;Live Games&nbsp;&nbsp;&nbsp;</span>
+                      <div style={lineStyle}></div>
+                    </div>
+                  </Grid>
+                  <Grid item xs={12} style={{marginLeft:"2%"}}>
+
+                    <LiveBets />
+
+                  </Grid>
+                </Grid>
+
+              </Container>
+            )}
+            {selectedItem === 'game' && (
+              <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+                <Games />
+              </Container>
+            )}
+            {selectedItem === 'livegame' && (
+              <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+                <LiveGames />
+              </Container>
+            )}
+            {selectedItem === 'faq' && (
+              <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+                <Faq />
+              </Container>
+            )}
+            {selectedItem === 'contact' && (
+              <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+                <Contact />
+              </Container>
+            )}
           </Box>
         </Box>
       </ThemeProvider>

@@ -7,74 +7,72 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Title from './Title';
 
+import Grid from '@mui/material/Grid';
+import banner1 from '../../assets/images/dashboard/divbanner1.png';
+import banner2 from '../../assets/images/dashboard/divbanner2.png';
+import bingo from '../../assets/images/dashboard/bingo.png';
+import crashgame from '../../assets/images/dashboard/crashgame.png';
+import baccarat from '../../assets/images/dashboard/baccarat.png';
+import cardmonte from '../../assets/images/dashboard/3cardmonte.png';
+import roulette from '../../assets/images/dashboard/roulette.png';
+import cardss from '../../assets/images/dashboard/3cards.png';
 // Generate Order Data
 function createData(id, game, time, bet, payout) {
-    return { id, game, time, bet, payout };
+  return { id, game, time, bet, payout };
 }
 
-const rows = [
-    createData(
-        0,
-        'Elvis Presley',
-        '2:23 pm',
-        '$450,00',
-        '$450',
-    ),
-    createData(
-        1,
-        'Paul McCartney',
-        '2:23 pm',
-        '$450,00',
-        '$450',
-    ),
-    createData(2, 'Tom Scholz', '2:23 pm',
-        '$450,00',
-        '$450',),
-    createData(
-        3,
-        'Michael Jackson',
-        '2:23 pm',
-        '$450,00',
-        '$450',
-    ),
-    createData(
-        4,
-        'Bruce Springsteen',
-        '2:23 pm',
-        '$450,00',
-        '$450',
-    ),
-];
 function preventDefault(event) {
   event.preventDefault();
 }
 
 export default function Orders() {
   return (
-    <React.Fragment>
-      <Table size="small">
-        <TableHead>
-          <TableRow>
-            <TableCell>Game</TableCell>
-            <TableCell>Time</TableCell>
-            <TableCell>Bet</TableCell>
-            <TableCell align="right">Payout</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.id}>
-                
-              <TableCell>{row.game}</TableCell>
-              <TableCell>{row.time}</TableCell>
-              <TableCell>{row.bet}</TableCell>
-              <TableCell  align="right">{row.payout}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-      
-    </React.Fragment>
+    <>
+      <Grid container spacing={3}>
+        <Grid item xs={2}>
+          <img src={bingo} alt="Banner 2"
+            style={{ width: '100%', height: '88%', objectFit: 'cover', marginTop: "-10%" }}
+            />
+        </Grid>
+        <Grid item xs={2}>
+          <img src={crashgame} alt="Banner 2"
+            style={{ width: '100%', height: '88%', objectFit: 'cover', marginTop: "-10%" }}
+          />
+        </Grid>
+        <Grid item xs={2}>
+          <img src={baccarat} alt="Banner 2"
+            style={{ width: '100%', height: '88%', objectFit: 'cover', marginTop: "-10%" }}
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <img src={banner1} alt="Banner 1"
+            style={{ width: '100%', height: '88%', objectFit: 'cover', marginTop: '-3%',  borderTopLeftRadius: 5, borderTopRightRadius: 5,borderBottomLeftRadius:5,borderBottomRightRadius:5 }}
+          />
+        </Grid>
+      </Grid>
+      <Grid container spacing={3}>
+        <Grid item xs={2}>
+          <img src={cardmonte} alt="Banner 2"
+            style={{ width: '100%', height: '88%', objectFit: 'cover', marginTop: "-10%" }}
+            />
+        </Grid>
+        <Grid item xs={2}>
+          <img src={roulette} alt="Banner 2"
+            style={{ width: '100%', height: '88%', objectFit: 'cover', marginTop: "-10%" }}
+          />
+        </Grid>
+        <Grid item xs={2}>
+          <img src={cardss} alt="Banner 2"
+            style={{ width: '100%', height: '88%', objectFit: 'cover', marginTop: "-10%" }}
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <img src={banner2} alt="Banner 1"
+            style={{ width: '100%', height: '88%', objectFit: 'cover', marginTop: '-3%',  borderTopLeftRadius: 5, borderTopRightRadius: 5,borderBottomLeftRadius:5,borderBottomRightRadius:5 }}
+            />
+        </Grid>
+      </Grid>
+    </>
   );
 }
 
