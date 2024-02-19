@@ -7,7 +7,6 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-import Backdrop from '@mui/material/Backdrop';
 import wallet from '../assets/images/dashboard/wallet.png';
 import { black } from '../assets/theme/colors';
 import argent from '../assets/images/modal/argent.png';
@@ -20,12 +19,14 @@ import walletConnect from '../assets/images/modal/walletConnecct.png';
 
 const RoundedButton = styled(Button)({
   borderRadius: '20px',
-  backgroundImage: 'linear-gradient(to right, #167ECD , #142547)', // Adjust colors as needed
+  backgroundImage: 'linear-gradient(to right, #167ECD , #142547)', 
   color: 'white',
 });
+
+
 const heading = {alignSelf:"center",fontWeight:"bold",color: black,fontSize:20};
 const subHeading = {alignSelf:"left",color: "#b3b1b1",fontSize:15};
-const listItem = { display: "flex", alignItems: "center", marginBottom: "10px" }; // Added listItem style
+const listItem = { display: "flex", alignItems: "center", marginBottom: "10px" }; 
 const listText = {alignSelf:"left",color: black,fontSize:15,fontWeight:"bold",marginLeft:"3%"};
 
 const ModalContent = ({ handleClose }) => {
@@ -114,26 +115,3 @@ export default function WalletButton() {
     </>
   );
 }
-
-
-// import * as React from 'react';
-// import { styled } from '@mui/material/styles';
-// import Button from '@mui/material/Button';
-// import wallet from '../assets/images/dashboard/wallet.png';
-// const RoundedButton = styled(Button)({
-//     borderRadius: '20px', // Adjust the value as needed
-//   });
-  
-//   export default function WalletButton() {
-//     return (
-//       <RoundedButton
-//         component="label"
-//         role={undefined}
-//         variant="contained"
-//         tabIndex={-1}
-//         startIcon={<img src={wallet} alt="logo" />}
-//       >
-//         Connect
-//       </RoundedButton>
-//     );
-//   }

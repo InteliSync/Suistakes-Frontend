@@ -10,14 +10,8 @@ import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
-import MenuIcon from '@mui/icons-material/Menu';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems } from './listItems';
 import LiveBets from './LiveBets';
 import Banner from './Banner';
@@ -103,8 +97,8 @@ export default function Dashboard() {
   };
 
   const textStyle = {
-    margin: '0 10px', 
-    fontSize: '18px', 
+    margin: '0 10px',
+    fontSize: '18px',
     color: CSecondary,
 
   };
@@ -131,7 +125,7 @@ export default function Dashboard() {
 
               style={{ backgroundColor: CPrimary }}
             >
-            
+
               <IconButton onClick={toggleDrawer}>
                 <img src={LeftIcon} alt="logo"
                   style={{ marginLeft: -15 }}
@@ -173,7 +167,7 @@ export default function Dashboard() {
               <img src={image1} alt="logo"
                 style={{ marginRight: "5%", }}
               />
-            
+
             </Toolbar>
             <List component="nav" style={{ backgroundColor: CPrimary, flex: 1 }}>
               {mainListItems(handleItemClick, selectedItem)}
@@ -194,21 +188,21 @@ export default function Dashboard() {
             {selectedItem === 'home' && (
               <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
                 <Grid container spacing={3}>
-                  <Grid item xs={12} style={{marginLeft:"2%"}}>
+                  <Grid item xs={12} style={{ marginLeft: "2%" }}>
                     <Banner />
                   </Grid>
 
-                  <Grid item xs={12} style={{marginTop:"-5%"}}>
+                  <Grid item xs={12} style={{ marginTop: "-5%" }}>
                     <Cards />
                   </Grid>
-                  <Grid item xs={12} style={{ marginTop: "2%", marginBottom: "2%",marginLeft:"2%" }}>
+                  <Grid item xs={12} style={{ marginTop: "2%", marginBottom: "2%", marginLeft: "2%" }}>
                     <div style={containerStyle}>
                       <div style={lineStyle}></div>
                       <span style={textStyle}>&nbsp;&nbsp;&nbsp;Live Games&nbsp;&nbsp;&nbsp;</span>
                       <div style={lineStyle}></div>
                     </div>
                   </Grid>
-                  <Grid item xs={12} style={{marginLeft:"2%"}}>
+                  <Grid item xs={12} style={{ marginLeft: "2%" }}>
 
                     <LiveBets />
 
