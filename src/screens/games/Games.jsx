@@ -13,6 +13,8 @@ import Checkers from '../../assets/images/dashboard/Checkers.png';
 import { CPrimary, CSecondary } from '../../assets/theme/colors';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
+import Rect from '../../assets/images/dashboard/Rect.png';
+import PlayNowButton from '../../components/PlayNow';
 
 function createData(id, name, imageSrc) {
   return { id, name, imageSrc };
@@ -80,15 +82,28 @@ const Games = () => {
           ))}
         </Grid>
 
-        <Grid item xs={4} style={{ marginTop: "-10%" }}>
+        <Grid item xs={4} style={{ marginTop: "-10%", }}>
+
           <img
             src={BeastProtector}
             alt="logo"
-            style={{}}
+            style={{ display: 'block' }}
           />
+          <div
+            style={{ marginTop: "-85%", marginLeft: "55%" }}
+          >
+            <img
+              src={Rect}
+              alt="logo"
+            />
+            <div style={{ marginTop: "-85%",  color: CSecondary ,alignItems:"center",justifyContent:"center",alignContent:"center",marginLeft:"100px"}}>CATCH THE CHANCE</div>
+            {/* <div>BEAST PROTECTOR</div> */}
+          </div>
+
         </Grid>
+
       </Grid>
-      <Grid item xs={6.5} style={{ marginTop: "-31%", marginLeft: "2%" }}>
+      <Grid item xs={6.5} style={{ marginTop: "-21%", marginLeft: "2%" }}>
         <div style={containerStyle}>
           <div style={lineStyle}></div>
           <span style={textStyle}>Live Games</span>
@@ -97,7 +112,7 @@ const Games = () => {
       </Grid>
       <Grid item container xs={6} spacing={3} style={{ marginLeft: "1%" }} >
         {cardData2.map((card) => (
-          <Grid item key={card.id} xs={4} sm={4} md={4} lg={4} style={{ marginTop: "-45%" }}>
+          <Grid item key={card.id} xs={4} sm={4} md={4} lg={4} style={{ marginTop: "-25%" }}>
             <Card style={{ borderTopLeftRadius: 30, borderTopRightRadius: 30, borderBottomLeftRadius: 30, borderBottomRightRadius: 30, }}>
               <CardMedia
                 component="img"
