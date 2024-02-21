@@ -1,17 +1,17 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import image1 from '../../assets/images/dashboard/image1.png';
+import image1 from '../../assets/images/dashboard/LGBanner1.png';
 import image2 from '../../assets/images/dashboard/image2.png';
 import image3 from '../../assets/images/dashboard/image3.png';
 
 
-const Banner = () => {
+const LiveGamesBanner = () => {
     return (
         <Grid container spacing={3}>
             <Grid item xs={6}>
                 {/* Image for the first banner */}
                 <img src={image1} alt="Banner 1"
-                    style={{ width: '100%', height: '75%', objectFit: 'cover', marginTop: '2%',marginRight:"-5%",borderTopLeftRadius:5,borderTopRightRadius:5}}
+                    style={{ width: '100%', height: '75%', objectFit: 'cover', marginTop: '2%',marginRight:"-5%",borderTopLeftRadius:15,borderTopRightRadius:15,borderBottomLeftRadius:15,borderBottomRightRadius:15}}
                 />
             </Grid>
             <Grid item xs={3}>
@@ -30,4 +30,4 @@ const Banner = () => {
     );
 };
 
-export default Banner;
+export default LiveGamesBanner;

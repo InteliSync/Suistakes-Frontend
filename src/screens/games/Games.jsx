@@ -1,15 +1,13 @@
 import React from 'react';
 import Banner from '../landing/Banner';
-import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import LiveGamesCard from './LiveGamesCard';
 import BeastProtector from '../../assets/images/dashboard/beastProtector.png';
 import Poker from '../../assets/images/dashboard/poker.png';
 import Dice from '../../assets/images/dashboard/dice.png';
 import Mines from '../../assets/images/dashboard/mines.png';
-import RedDog from '../../assets/images/dashboard/RedDog.png';
+import RedDog from '../../assets/images/dashboard/RedDog2.png';
 import SpinWheel from '../../assets/images/dashboard/spinWheel.png';
-import Checkers from '../../assets/images/dashboard/Checkers.png';
+import Checkers from '../../assets/images/dashboard/Checkers2.png';
 import { CPrimary, CSecondary } from '../../assets/theme/colors';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
@@ -82,28 +80,24 @@ const Games = () => {
           ))}
         </Grid>
 
-        <Grid item xs={4} style={{ marginTop: "-10%", }}>
+        <Grid item xs={4} style={{ marginTop: "-10%", display: 'block' }}>
 
-          <img
-            src={BeastProtector}
-            alt="logo"
-            style={{ display: 'block' }}
-          />
-          <div
-            style={{ marginTop: "-85%", marginLeft: "55%" }}
-          >
+          <div>
             <img
-              src={Rect}
+              src={BeastProtector}
               alt="logo"
+              style={{ display: 'block' }}
             />
-            <div style={{ marginTop: "-85%",  color: CSecondary ,alignItems:"center",justifyContent:"center",alignContent:"center",marginLeft:"100px"}}>CATCH THE CHANCE</div>
-            {/* <div>BEAST PROTECTOR</div> */}
+          </div>
+
+          <div style={{ marginTop: "-40%", marginLeft: "90%", width: '100px' }}>
+            {/* <button style={{ backgroundColor: '#0088FF', borderRadius: 50, height: 40, color: CSecondary, padding: "3%" }}>&nbsp;&nbsp;Play Now&nbsp;&nbsp;</button> */}
           </div>
 
         </Grid>
 
       </Grid>
-      <Grid item xs={6.5} style={{ marginTop: "-21%", marginLeft: "2%" }}>
+      <Grid item xs={6.5} style={{ marginTop: "-250px", marginLeft: "2%" }}>
         <div style={containerStyle}>
           <div style={lineStyle}></div>
           <span style={textStyle}>Live Games</span>
@@ -112,7 +106,7 @@ const Games = () => {
       </Grid>
       <Grid item container xs={6} spacing={3} style={{ marginLeft: "1%" }} >
         {cardData2.map((card) => (
-          <Grid item key={card.id} xs={4} sm={4} md={4} lg={4} style={{ marginTop: "-25%" }}>
+          <Grid item key={card.id} xs={4} sm={4} md={4} lg={4} style={{ marginTop: "-35%", marginBottom: "15%" }}>
             <Card style={{ borderTopLeftRadius: 30, borderTopRightRadius: 30, borderBottomLeftRadius: 30, borderBottomRightRadius: 30, }}>
               <CardMedia
                 component="img"

@@ -16,12 +16,15 @@ import metamask from '../assets/images/modal/meatmask.png';
 import trust from '../assets/images/modal/trust.png';
 import walletConnect from '../assets/images/modal/walletConnecct.png';
 
-
 const RoundedButton = styled(Button)({
   borderRadius: '20px',
-  backgroundImage: 'linear-gradient(to right, #167ECD , #142547)', 
+  backgroundColor: '#0088FF',  
+  borderColor: '#78B1FF',
+  borderWidth:'3px',
+  //backgroundImage: 'linear-gradient(to right, #167ECD, #142547)',
   color: 'white',
 });
+
 
 
 const heading = {alignSelf:"center",fontWeight:"bold",color: black,fontSize:20};

@@ -1,6 +1,7 @@
 // colors.js
 
-export const CPrimary = '#181F36';
+//export const CPrimary = '#181F36';
+export const CPrimary = '#1A1F3F';
 export const CSecondary = '#ffffff';
 export const backgroundColor = '#030F1C';
 export const darkBlue = '#01152D';

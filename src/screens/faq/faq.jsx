@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
-import { CPrimary, CSecondary, darkBlue } from '../../assets/theme/colors';
+import { CPrimary, CSecondary, backgroundColor, darkBlue } from '../../assets/theme/colors';
 import Plus from '../../assets/images/dashboard/plus.png';
 import Minus from '../../assets/images/dashboard/minus.png';
 import Steller from '../../assets/images/dashboard/TrySteller.png';
 import Dice from '../../assets/images/dashboard/ChanceDice.png';
 import PlayNowButton from '../../components/PlayNow';
 import LiveGamesCard from '../games/LiveGamesCard';
+import CasRoc1 from '../../assets/images/dashboard/CasRoc1.png';
+import CasRoc2 from '../../assets/images/dashboard/CasRoc2.png';
 
 const Faq = () => {
   const containerStyle = {
     backgroundColor: darkBlue,
     marginLeft: '2%',
     padding: '20px',
-    marginTop:"5%"
+    marginTop: "5%",
+    borderRadius: '15px',
   };
 
   const faqContainer = {
@@ -31,15 +34,17 @@ const Faq = () => {
     cursor: 'pointer',
     width: "100%",
     cursor: 'pointer',
-    backgroundColor: ' #167ECD ',
+    backgroundColor: ' #167ECD',
     color: CSecondary,
     padding: "1%",
     borderRadius: 10,
+    //backgroundImage: 'linear-gradient(to right, #167ECD , #1A1F3F)', 
+
   };
 
   const answerContainerStyle = {
     width: "100%",
-    backgroundColor: CPrimary, // Answer container color (dark blue)
+    backgroundColor: CPrimary,
     padding: '10px',
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
@@ -82,12 +87,10 @@ const Faq = () => {
   ];
 
   const handlePlayNowDice = () => {
-    // Your logic for the Play Now button click on Page 1
     console.log('Play Now clicked');
   };
 
   const handlePlayNowSteler = () => {
-    // Your logic for the Play Now button click on Page 1
     console.log('Play Now clicked on Page 1');
   };
 
@@ -98,7 +101,7 @@ const Faq = () => {
   };
   return (
     <>
-    <LiveGamesCard/>
+      <LiveGamesCard />
       <div style={containerStyle}>
         <div style={{ display: 'flex', marginBottom: "3%" }}>
           <div style={lineStyle}></div>
@@ -142,40 +145,22 @@ const Faq = () => {
 
       </div >
 
-      <div style={{ display: 'flex', marginTop: "3%", marginLeft: '2%', justifyContent: 'space-between',alignContent:"center",alignItems:"center" }}>
-        <div style={BannerContainer1}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignContent: "center", alignItems: "center", marginLeft: "-2%" }}>
+        <div>
           <img
-            src={Steller}
-            alt={'banner'}
-            style={{marginRight:"5%"}}
-          />
-
-          <PlayNowButton
-            onPress={handlePlayNowSteler}
-            backgroundColor="#FDCF39"
-            textColor="#111111"
-            borderRadius="10px" 
-
+            src={CasRoc2}
+            alt={'CasRoc2'}
+            style={{ width: "100%" }}
           />
         </div>
-        <div style={BannerContainer2}>
+        <div>
           <img
-            src={Dice}
-            alt={'banner'}
-            style={{marginRight:"5%"}}
-          />
-
-
-          <PlayNowButton
-            onPress={handlePlayNowDice}
-            backgroundColor="#FDCF39"
-            textColor="#111111"
-            borderRadius="10px"
-
+            src={CasRoc1}
+            alt={'CasRoc1'}
+            style={{ width: "100%" }}
           />
         </div>
       </div>
-
     </>
   );
 };

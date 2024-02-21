@@ -1,77 +1,81 @@
 import * as React from 'react';
-import Link from '@mui/material/Link';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Title from './Title';
-
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
-import banner1 from '../../assets/images/dashboard/divbanner1.png';
-import banner2 from '../../assets/images/dashboard/divbanner2.png';
 import bingo from '../../assets/images/dashboard/bingo.png';
-import crashgame from '../../assets/images/dashboard/crashgame.png';
 import baccarat from '../../assets/images/dashboard/baccarat.png';
 import cardmonte from '../../assets/images/dashboard/3cardmonte.png';
 import roulette from '../../assets/images/dashboard/roulette.png';
 import cardss from '../../assets/images/dashboard/3cards.png';
-// Generate Order Data
-function createData(id, game, time, bet, payout) {
-  return { id, game, time, bet, payout };
+
+function createData(id, name, imageSrc) {
+  return { id, name, imageSrc };
 }
 
-function preventDefault(event) {
-  event.preventDefault();
-}
+const cardData = [
+  createData(0, 'Bingo', bingo),
+  createData(1, 'Crash Game', card1Image),
+  createData(3, 'Baccarat', baccarat),
+  createData(4, 'Crystal', card4Image),
+  createData(5, '3Card Monte', cardmonte),
+  createData(6, 'Roulette', roulette),
+  createData(2, 'Black Jack', card5Image),
+  createData(7, '3Card Monte', cardss),
+  createData(8, 'Red dog', card2Image),
+  createData(9, 'Checkers', card3Image),
+];
+
+import card1Image from '../../assets/images/dashboard/crashgame.png';
+import card2Image from '../../assets/images/dashboard/RedDog.png';
+import card3Image from '../../assets/images/dashboard/Checkers.png';
+import card4Image from '../../assets/images/dashboard/crystal.png';
+import card5Image from '../../assets/images/dashboard/blackJack.png';
+import { CPrimary, CSecondary, darkBlue } from '../../assets/theme/colors';
+
+
+const scroll_Container = {
+  display: 'flex',
+  marginTop: '20px', 
+};
+const heading_Container = {
+  flexDirection: 'column-reverse',
+  backgroundColor: CPrimary,
+  fontWeight: 'bold',
+  color: CSecondary,
+  overflowY: 'auto',
+  transform: 'rotate(-90deg)', // Rotate by 90 degrees counterclockwise
+  justifyContent: "center",
+  borderTopLeftRadius: 20,
+  borderTopRightRadius: 20,
+  width: "2%",
+  marginLeft: "-14%",
+  fontSize: 15,
+  height: "3%",
+  marginTop: "7.9%",
+  paddingTop: "2%",
+  paddingLeft: "1%",
+
+};
+
 
 export default function Orders() {
   return (
     <>
-      <Grid container spacing={3}>
-        <Grid item xs={2}>
-          <img src={bingo} alt="Banner 2"
-            style={{ width: '100%', height: '88%', objectFit: 'cover', marginTop: "-10%" }}
-            />
-        </Grid>
-        <Grid item xs={2}>
-          <img src={crashgame} alt="Banner 2"
-            style={{ width: '100%', height: '88%', objectFit: 'cover', marginTop: "-10%" }}
-          />
-        </Grid>
-        <Grid item xs={2}>
-          <img src={baccarat} alt="Banner 2"
-            style={{ width: '100%', height: '88%', objectFit: 'cover', marginTop: "-10%" }}
-          />
-        </Grid>
-        <Grid item xs={6}>
-          <img src={banner1} alt="Banner 1"
-            style={{ width: '100%', height: '88%', objectFit: 'cover', marginTop: '-3%',  borderTopLeftRadius: 5, borderTopRightRadius: 5,borderBottomLeftRadius:5,borderBottomRightRadius:5 }}
-          />
-        </Grid>
+      <Grid container xs={12} style={scroll_Container} wrap="wrap">
+        {cardData.map((card) => (
+          <Grid item key={card.id} xs={6} sm={3} md={3} lg={2.3}>
+            <Card style={{ borderTopLeftRadius: 25, borderTopRightRadius: 25, borderBottomLeftRadius: 25, borderBottomRightRadius: 25, marginRight: "5%", marginLeft: "5%",marginBottom:"15%", borderColor: CPrimary, borderWidth: 2, }}>
+              <CardMedia
+                component="img"
+                height={"25%"}
+                image={card.imageSrc}
+                alt={card.name}
+              />
+            </Card>
+          </Grid>
+        ))}
       </Grid>
-      <Grid container spacing={3}>
-        <Grid item xs={2}>
-          <img src={cardmonte} alt="Banner 2"
-            style={{ width: '100%', height: '88%', objectFit: 'cover', marginTop: "-10%" }}
-            />
-        </Grid>
-        <Grid item xs={2}>
-          <img src={roulette} alt="Banner 2"
-            style={{ width: '100%', height: '88%', objectFit: 'cover', marginTop: "-10%" }}
-          />
-        </Grid>
-        <Grid item xs={2}>
-          <img src={cardss} alt="Banner 2"
-            style={{ width: '100%', height: '88%', objectFit: 'cover', marginTop: "-10%" }}
-          />
-        </Grid>
-        <Grid item xs={6}>
-          <img src={banner2} alt="Banner 1"
-            style={{ width: '100%', height: '88%', objectFit: 'cover', marginTop: '-3%',  borderTopLeftRadius: 5, borderTopRightRadius: 5,borderBottomLeftRadius:5,borderBottomRightRadius:5 }}
-            />
-        </Grid>
-      </Grid>
+
     </>
   );
 }

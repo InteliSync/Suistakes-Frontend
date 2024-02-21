@@ -13,20 +13,21 @@ import IconButton from '@mui/material/IconButton';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { mainListItems } from './listItems';
+import { secondaryListItems } from './listItemSecondary';
+import { CopyRight } from './CopyRight';
 import LiveBets from './LiveBets';
 import Banner from './Banner';
 import Cards from './Cards';
 import image1 from '../../assets/images/dashboard/suiStakeLogo.png';
 import LeftIcon from '../../assets/images/dashboard/LeftIcon.png';
 import Button from '../../components/Button';
-import { CPrimary, CSecondary, backgroundColor } from '../../assets/theme/colors'
+import { CPrimary, CSecondary, backgroundColor, darkBlue } from '../../assets/theme/colors'
 import Games from '../games/Games';
 import LiveGames from '../liveGames/LiveGames';
 import Faq from '../faq/faq';
 import Contact from '../contact/Contact';
 
-
-const drawerWidth = 200;
+const drawerWidth = 220;
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -67,7 +68,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
         }),
         width: theme.spacing(7),
         [theme.breakpoints.up('sm')]: {
-          width: theme.spacing(9),
+          width: theme.spacing(7),
         },
       }),
     },
@@ -103,6 +104,11 @@ export default function Dashboard() {
 
   };
 
+  const customDivider = {
+    backgroundColor: backgroundColor,
+    height: 1.5,
+
+  };
 
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
@@ -111,7 +117,7 @@ export default function Dashboard() {
 
   return (
 
-    <div style={{ backgroundColor: backgroundColor }}>
+    <div style={{ backgroundColor: backgroundColor, }}>
       <ThemeProvider theme={defaultTheme} style={{ backgroundColor: CPrimary }}>
         <Box sx={{
           display: 'flex',
@@ -119,7 +125,7 @@ export default function Dashboard() {
         }}>
           <CssBaseline />
 
-          <AppBar position="absolute" open={open} style={{ backgroundColor: CPrimary }}>
+          <AppBar position="absolute" open={open} style={{ backgroundColor: CPrimary, }}>
 
             <Toolbar
 
@@ -169,10 +175,24 @@ export default function Dashboard() {
               />
 
             </Toolbar>
-            <List component="nav" style={{ backgroundColor: CPrimary, flex: 1 }}>
-              {mainListItems(handleItemClick, selectedItem)}
+            
+            <List component="nav"  style={{ backgroundColor: CPrimary, flex: 1,}}>
+            <div style={{ paddingLeft: "10%", paddingRight: "10%", backgroundColor: CPrimary, marginTop: "-5%",marginBottom:'5%'  }}>
+                <div style={{ height: '1.8px', backgroundColor: darkBlue, }}></div>
+              </div>
 
-            </List>
+              {mainListItems(handleItemClick, selectedItem)}
+              <div style={{ paddingLeft: "10%", paddingRight: "10%", backgroundColor: CPrimary, marginTop: "5%",marginBottom:'5%' }}>
+              <div style={{ height: '1px', backgroundColor: darkBlue, }}></div>
+              </div>
+
+              {secondaryListItems(handleItemClick, selectedItem)}
+            
+<div style={{marginTop:"20%"}}>
+{CopyRight(handleItemClick, selectedItem)}
+
+</div>
+          </List>
           </Drawer>
           <Box
             component="main"
@@ -181,12 +201,13 @@ export default function Dashboard() {
               flexGrow: 1,
               height: '100vh',
 
-              overflowY: 'scroll', scrollbarWidth: 'none', msOverflowStyle: 'none',
+              overflowY: 'scroll',
+              scrollbarWidth: 'none', msOverflowStyle: 'none',
             }}
           >
             <Toolbar />
             {selectedItem === 'home' && (
-              <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+              <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }} style={{position:"static"}}>
                 <Grid container spacing={3}>
                   <Grid item xs={12} style={{ marginLeft: "2%" }}>
                     <Banner />
