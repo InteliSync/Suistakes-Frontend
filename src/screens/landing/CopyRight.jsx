@@ -20,7 +20,7 @@ const sections = [
 
 const iconContainerStyle = {
   display: 'flex',
-  flexWrap: 'wrap',  // Allow items to wrap to the next line
+  flexWrap: 'wrap',  
 };
 
 export const CopyRight = (handleItemClick, selectedItem) => {
@@ -40,27 +40,3 @@ export const CopyRight = (handleItemClick, selectedItem) => {
 };
 
 
-
-// import React from 'react';
-// import { CSecondary } from '../../assets/theme/colors';
-// import ListItemButton from '@mui/material/ListItemButton';
-// import ListItemIcon from '@mui/material/ListItemIcon';
-// import X from '../../assets/images/listItem/X.png';
-
-// export const CopyRight = (handleItemClick, selectedItem) => {
-
-//   return (
-//     <React.Fragment>
-//       <ListItemButton >
-//         <ListItemIcon>
-//           <img src={X} alt="logo" />
-//         </ListItemIcon>
-//         <ListItemText primary={'Suistakes Casino'} style={{ color: CSecondary }} />
-
-//       </ListItemButton>
-
-//     </React.Fragment>
-
-//   );
-// }
-{/* <ListItemText primary={' ©' + new Date().getFullYear() + 'Suistakes Casino'} style={{ color: CSecondary }} /> */ }

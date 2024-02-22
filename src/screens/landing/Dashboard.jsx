@@ -60,6 +60,9 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
       boxSizing: 'border-box',
       borderRight: `1px solid ${backgroundColor}`,
       borderTop: `1px solid ${backgroundColor}`,
+      overflowY: 'scroll',
+      scrollbarWidth: 'none',
+      msOverflowStyle: 'none',
       ...(!open && {
         overflowX: 'hidden',
         transition: theme.transitions.create('width', {
@@ -117,7 +120,7 @@ export default function Dashboard() {
 
   return (
 
-    <div style={{ backgroundColor: backgroundColor, }}>
+    <div style={{ backgroundColor: backgroundColor, height: '100vh', display: 'flex', }}>
       <ThemeProvider theme={defaultTheme} style={{ backgroundColor: CPrimary }}>
         <Box sx={{
           display: 'flex',
@@ -175,24 +178,24 @@ export default function Dashboard() {
               />
 
             </Toolbar>
-            
-            <List component="nav"  style={{ backgroundColor: CPrimary, flex: 1,}}>
-            <div style={{ paddingLeft: "10%", paddingRight: "10%", backgroundColor: CPrimary, marginTop: "-5%",marginBottom:'5%'  }}>
+
+            <List component="nav" style={{ backgroundColor: CPrimary, flex: 1, }}>
+              <div style={{ paddingLeft: "10%", paddingRight: "10%", backgroundColor: CPrimary, marginTop: "-5%", marginBottom: '5%' }}>
                 <div style={{ height: '1.8px', backgroundColor: darkBlue, }}></div>
               </div>
 
               {mainListItems(handleItemClick, selectedItem)}
-              <div style={{ paddingLeft: "10%", paddingRight: "10%", backgroundColor: CPrimary, marginTop: "5%",marginBottom:'5%' }}>
-              <div style={{ height: '1px', backgroundColor: darkBlue, }}></div>
+              <div style={{ paddingLeft: "10%", paddingRight: "10%", backgroundColor: CPrimary, marginTop: "5%", marginBottom: '5%' }}>
+                <div style={{ height: '1px', backgroundColor: darkBlue, }}></div>
               </div>
 
               {secondaryListItems(handleItemClick, selectedItem)}
-            
-<div style={{marginTop:"20%"}}>
-{CopyRight(handleItemClick, selectedItem)}
 
-</div>
-          </List>
+              <div style={{ marginTop: "17%" }}>
+                {CopyRight(handleItemClick, selectedItem)}
+
+              </div>
+            </List>
           </Drawer>
           <Box
             component="main"
@@ -204,10 +207,11 @@ export default function Dashboard() {
               overflowY: 'scroll',
               scrollbarWidth: 'none', msOverflowStyle: 'none',
             }}
+
           >
             <Toolbar />
             {selectedItem === 'home' && (
-              <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }} style={{position:"static"}}>
+              <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }} style={{ position: "static" }}>
                 <Grid container spacing={3}>
                   <Grid item xs={12} style={{ marginLeft: "2%" }}>
                     <Banner />

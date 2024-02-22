@@ -1,12 +1,10 @@
 import * as React from 'react';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import { CPrimary, CSecondary, backgroundColor } from '../../assets/theme/colors';
 import Telegram from '../../assets/images/listItem/Telegram.png';
 import Github from '../../assets/images/listItem/Github.png';
 import X from '../../assets/images/listItem/X.png';
 import Facebook from '../../assets/images/listItem/Facebook.png';
-import Meta from '../../assets/images/listItem/meta.png';
 import Linkedin from '../../assets/images/listItem/linkedin.png';
 import Discord from '../../assets/images/listItem/Discord.png';
 import Instagram from '../../assets/images/listItem/Instagram.png';
@@ -23,7 +21,7 @@ const sections = [
 
 const iconContainerStyle = {
     display: 'flex',
-    flexWrap: 'wrap',  // Allow items to wrap to the next line
+    flexWrap: 'wrap',  
   };
   
   export const secondaryListItems = (handleItemClick, selectedItem) => {

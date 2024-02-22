@@ -35,7 +35,7 @@ import { CPrimary, CSecondary, darkBlue } from '../../assets/theme/colors';
 
 const scroll_Container = {
   display: 'flex',
-  marginTop: '20px', 
+  marginTop: '20px',
 };
 const heading_Container = {
   flexDirection: 'column-reverse',
@@ -61,10 +61,12 @@ const heading_Container = {
 export default function Orders() {
   return (
     <>
+      {/* CardData component Start */}
+
       <Grid container xs={12} style={scroll_Container} wrap="wrap">
         {cardData.map((card) => (
           <Grid item key={card.id} xs={6} sm={3} md={3} lg={2.3}>
-            <Card style={{ borderTopLeftRadius: 25, borderTopRightRadius: 25, borderBottomLeftRadius: 25, borderBottomRightRadius: 25, marginRight: "5%", marginLeft: "5%",marginBottom:"15%", borderColor: CPrimary, borderWidth: 2, }}>
+            <Card style={{ borderTopLeftRadius: 25, borderTopRightRadius: 25, borderBottomLeftRadius: 25, borderBottomRightRadius: 25, marginRight: "5%", marginLeft: "5%", marginBottom: "15%", borderColor: CPrimary, borderWidth: 2, }}>
               <CardMedia
                 component="img"
                 height={"25%"}
@@ -75,6 +77,8 @@ export default function Orders() {
           </Grid>
         ))}
       </Grid>
+
+      {/* cardData component end */}
 
     </>
   );

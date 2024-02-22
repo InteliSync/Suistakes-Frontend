@@ -28,7 +28,7 @@ import { CPrimary, CSecondary, darkBlue } from '../../assets/theme/colors';
 const scroll_Container = {
     display: 'flex',
     overflowX: 'auto',
-    marginTop: '20px', 
+    marginTop: '20px',
     backgroundColor: darkBlue,
     borderBottomRightRadius: 20,
     borderTopRightRadius: 20,
@@ -66,16 +66,17 @@ export default function Cards() {
 
     return (
 
-        <Grid container spacing={0} style={{ justifyContent: "center"}}>
+        <Grid container spacing={0} style={{ justifyContent: "center" }}>
 
-            {/* First Grid for FEATURED GAMES*/}
+            {/* First Grid for FEATURED GAMES start*/}
 
             <Grid item xs={2.1} style={heading_Container}>
                 FEATURED GAMES
             </Grid>
 
+            {/* first grid for featured games end */}
 
-            {/* Second Grid for cardData */}
+            {/* Second Grid for cardData  start*/}
             <Grid item xs={11.2} style={scroll_Container}>
                 {cardData.map((card) => (
                     <Grid item key={card.id} xs={12} sm={4} md={4} lg={3}>
@@ -90,6 +91,9 @@ export default function Cards() {
                     </Grid>
                 ))}
             </Grid>
+
+            {/* Second grid for cardData end */}
+
         </Grid>
 
     );

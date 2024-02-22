@@ -28,7 +28,7 @@ import { CPrimary, CSecondary, darkBlue } from '../../assets/theme/colors';
 const scroll_Container = {
     display: 'flex',
     overflowX: 'auto',
-    marginTop: '20px', 
+    marginTop: '20px',
     backgroundColor: darkBlue,
     borderBottomRightRadius: 20,
     borderTopRightRadius: 20,
@@ -56,14 +56,14 @@ const heading_Container = {
     marginTop: "8.1%",
     paddingTop: "2%",
     paddingLeft: "3%",
-    paddingBottom:"1%",
+    paddingBottom: "1%",
 
 };
 
 const dotStyle = {
     position: 'absolute',
-    top: '50%',          
-    left: '1.5rem',      
+    top: '50%',
+    left: '1.5rem',
     width: '8px',
     height: '8px',
     borderRadius: '50%',
@@ -78,14 +78,18 @@ export default function LiveGamesCard() {
     return (
 
         <Grid container spacing={0} style={{ marginLeft: "10%" }}>
-            {/* First Grid for Live GAMES */}
+
+            {/* First Grid for Live GAMES start */}
+            
             <Grid item xs={2.1} style={heading_Container}>
                 <span style={dotStyle}></span>
                 &nbsp;&nbsp;LIVE GAMES
             </Grid>
 
+            {/* first grid for live games end */}
 
-            {/* Second Grid for cardData */}
+            {/* Second Grid for cardData start */}
+
             <Grid item xs={11.2} style={scroll_Container}>
                 {cardData.map((card) => (
                     <Grid item key={card.id} xs={12} sm={4} md={4} lg={3}>
@@ -100,6 +104,9 @@ export default function LiveGamesCard() {
                     </Grid>
                 ))}
             </Grid>
+
+            {/* Second grid for carddata end */}
+
         </Grid>
 
     );

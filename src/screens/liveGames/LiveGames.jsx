@@ -72,13 +72,25 @@ const LiveGames = () => {
 
   return (
     <Grid container spacing={3}>
+
+      {/* first Component of the screen banner Start */}
+
       <Grid item xs={12} style={{ marginLeft: "2%" }}>
         <LiveGamesBanner />
       </Grid>
 
+      {/* first Component of the screen bannner end*/}
+
+      {/* Second Component of the screen games card Start */}
+
       <Grid item xs={12} style={{ marginLeft: "2%", marginTop: "-2%" }}>
         <LiGameCard />
       </Grid>
+
+      {/* Second Component of the screen Games card end */}
+
+      {/* third Component of the screen Live Games cardData Start */}
+
 
       <Grid item xs={12} style={{ marginTop: "2%", marginLeft: "2%" }}>
         <div style={containerStyle}>
@@ -133,6 +145,7 @@ const LiveGames = () => {
         </Grid>
       </Grid>
 
+      {/* third Component of the screen Live Games cardData end */}
 
     </Grid>
   )

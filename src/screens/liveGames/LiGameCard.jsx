@@ -13,6 +13,9 @@ import Image4 from '../../assets/images/dashboard/PokerBannerImg.png';
 const LiGameCard = () => {
     return (
         <Grid container spacing={3}>
+
+            {/* first card component start */}
+
             <Grid item xs={3}>
                 <div style={{
                     display: 'flex',
@@ -28,6 +31,10 @@ const LiGameCard = () => {
                 </div>
             </Grid>
 
+            {/* first card component end */}
+
+            {/* second card component start */}
+
             <Grid item xs={3}>
                 <div style={{
                     display: 'flex',
@@ -42,6 +49,11 @@ const LiGameCard = () => {
                     />
                 </div>
             </Grid>
+
+            {/* second card component end */}
+
+            {/* third card component start */}
+
             <Grid item xs={3}>
                 <div style={{
                     display: 'flex',
@@ -56,6 +68,11 @@ const LiGameCard = () => {
                     />
                 </div>
             </Grid>
+
+            {/* third card component end */}
+
+            {/* fourth card component start */}
+
             <Grid item xs={3}>
                 <div style={{
                     display: 'flex',
@@ -70,6 +87,9 @@ const LiGameCard = () => {
                     />
                 </div>
             </Grid>
+
+            {/* first card component end */}
+
         </Grid>
     );
 };

@@ -121,19 +121,27 @@ const Contact = () => {
 
   return (
     <>
+      {/* First Component of the screen Horizontal List Start */}
       <LiveGamesCard />
+      {/* First Component of the screen Horizontal List End */}
 
+
+      {/* Second Component of the screen Contact US Start */}
       <div style={containerStyle}>
         <div style={{ display: 'flex', }}>
           <div style={lineStyle}></div>
           <span style={textStyle}>CONTACT US</span>
           <div style={lineStyle}></div>
         </div>
+
         <div style={{ display: 'flex', }}>
           <div style={formStyle}>
             <div style={{ width: '30%' }}>
               <img src={CasinoImage} alt="logo" />
             </div>
+
+            {/* Contact US Form Start */}
+
             <div style={fieldContainerStyle}>
               <div style={{ display: 'flex', marginBottom: '10px' }}>
                 <input
@@ -175,10 +183,15 @@ const Contact = () => {
             borderRadius={50 }
           /> */}
             </div>
+
+            {/* Contact US form end */}
+
           </div>
         </div>
 
       </div>
+      {/* Second Component of the screen Contact US end */}
+
     </>
   );
 }

@@ -22,7 +22,7 @@ const LiveGamesBanner = () => {
             </Grid>
             <Grid item xs={3}>
                 {/* Image for the third banner */}
-                <img src={image3} alt="Banner 2"
+                <img src={image3} alt="Banner 3"
                     style={{ width: '100%', height: '88%', objectFit: 'cover',marginTop:"-10%" }}
                 />
             </Grid>

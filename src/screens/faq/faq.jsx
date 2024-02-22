@@ -101,13 +101,23 @@ const Faq = () => {
   };
   return (
     <>
+      {/* First Component of the screen Horizontal List Start */}
+
       <LiveGamesCard />
+
+      {/* First Component of the screen Horizontal List end */}
+
+      {/* Second Component of the screen FAQ Start */}
+
       <div style={containerStyle}>
         <div style={{ display: 'flex', marginBottom: "3%" }}>
           <div style={lineStyle}></div>
           <span style={textStyle}>FREQUENTLY ASKED QUESTIONS</span>
           <div style={lineStyle}></div>
         </div>
+
+
+        {/* Faq Start */}
 
         {faqs.reduce((rows, faq, index) => {
           if (index % 2 === 0) {
@@ -143,7 +153,15 @@ const Faq = () => {
           </div>
         ))}
 
+        {/* Faq end */}
+
+
       </div >
+
+      {/* Second Component of the screen faq end */}
+
+      {/* Third Component of the screen banner Start */}
+
 
       <div style={{ display: 'flex', justifyContent: 'space-between', alignContent: "center", alignItems: "center", marginLeft: "-2%" }}>
         <div>
@@ -161,6 +179,8 @@ const Faq = () => {
           />
         </div>
       </div>
+      {/* third Component of the screen banner end */}
+
     </>
   );
 };

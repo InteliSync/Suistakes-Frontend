@@ -16,6 +16,9 @@ import metamask from '../assets/images/modal/meatmask.png';
 import trust from '../assets/images/modal/trust.png';
 import walletConnect from '../assets/images/modal/walletConnecct.png';
 
+
+
+
 const RoundedButton = styled(Button)({
   borderRadius: '20px',
   backgroundColor: '#0088FF',  
